@@ -62,12 +62,6 @@
             <h1 class="title">인공지능 동물상 테스트 (남자)</h1>
             <h2 class="subtitle">나는 어떤 동물과 닮았을까?</h2>
         </section>
-        <section class="youtube">
-            <div class="container mt-5 youtube-cover d-flex flex-row-reverse">
-                <img src="img/youtube-copy.jpg" alt="youtube-icon" class="youtube-icon" />
-                <a href="" class="youtube-link">안나짱뿅뿅뿅</a>
-            </div>
-        </section>
 
         <script
             class="jsbin"
@@ -88,7 +82,7 @@
                     </h3>
                 </div>
             </div>
-            <div class="file-upload-content"	>
+            <div class="file-upload-content">
                 <img class="file-upload-image" id="face-image" src="#" alt="your image" />
                 <div id="loading" class="animated bounce">
                     <div class="spinner-border" role="status">
@@ -100,23 +94,25 @@
                 <div id="label-container"></div>
                 <div class="addthis_inline_share_toolbox"></div>
                 <div class="image-title-wrap">
-                 <button type="button p-2" class="try-again-btn" onclick="gaReload1();" data-toggle="modal" data-target="#adModal">
-                    <span class="try-again-text">다른 사진으로 재시도</span>
-                </button>
+                    <button
+                        type="button p-2"
+                        class="try-again-btn"
+                        onclick="window.location.reload();"
+                    >
+                        <span class="try-again-text">다른 사진으로 재시도</span>
+                    </button>
                 </div>
                 <!-- Go to www.addthis.com/dashboard to customize your tools -->
             </div>
         </div>
         <div id="webcam-container"></div>
         <div id="disqus_thread"></div>
-		    <script>
-        function gaReload1() {
-        	console.log("S");
-        }
-  
-    </script>
-    <script>
-  
+        <script>
+            function gaReload1() {
+                console.log('S');
+            }
+        </script>
+        <script>
             (function () {
                 // DON'T EDIT BELOW THIS LINE
                 var d = document,
@@ -156,7 +152,7 @@
                     var reader = new FileReader();
                     reader.onload = function (e) {
                         $('.image-upload-wrap').hide();
-						 $('#loading').show();
+                        $('#loading').show();
                         $('.file-upload-image').attr('src', e.target.result);
                         $('.file-upload-content').show();
                         $('.image-title').html(input.files[0].name);
@@ -164,7 +160,7 @@
                     reader.readAsDataURL(input.files[0]);
                     init().then(() => {
                         predict();
-						 $('#loading').hide();
+                        $('#loading').hide();
                     });
                 } else {
                     removeUpload();
