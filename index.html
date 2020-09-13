@@ -58,6 +58,51 @@
                 </ul>
             </div>
         </nav>
+        <script>
+            var ua = navigator.userAgent.toLowerCase();
+            function changeLanguage(lang) {
+                if (
+                    (navigator.userAgent.indexOf('Mac OS') > 0 &&
+                        navigator.userAgent.indexOf('Safari') <= 0) ||
+                    (navigator.userAgent.indexOf('Android') > 0 &&
+                        navigator.userAgent.indexOf('wv)') > 0)
+                ) {
+                    if (ua.match('android') != null) {
+                        window.open(
+                            'googlechrome://navigate?url=animalfacehoin.netlify.app/' +
+                                lang.value +
+                                '/index.html'
+                        ); //android
+                    } else if (
+                        ua.indexOf('iphone') > -1 ||
+                        ua.indexOf('ipad') > -1 ||
+                        ua.indexOf('ipod') > -1
+                    ) {
+                        window.location.href =
+                            'https://animalfacehoin.netlify.app/' + lang.value + '/index.html';
+                    } else {
+                        window.location.href =
+                            'https://animalfacehoin.netlify.app/' + lang.value + '/index.html';
+                    }
+                } else {
+                    window.location.href =
+                        'https://animalfacehoin.netlify.app/' + lang.value + '/index.html';
+                }
+            }
+        </script>
+        <div id="google_translate_element"></div>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement(
+                    { pageLanguage: 'kr' },
+                    'google_translate_element'
+                );
+            }
+        </script>
+        <script
+            type="text/javascript"
+            src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+        ></script>
         <section class="section">
             <h1 class="title">인공지능 동물상 테스트 (남자)</h1>
             <h2 class="subtitle">나는 어떤 동물과 닮았을까?</h2>
